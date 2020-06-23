@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Finshots Update",
+  "description": "This extension will give you daily update from Finshots",
+  "version": "1.0.0",
+  "icons": {
+    "16": "assets/finshots.png",
+    "48": "assets/finshots.png",
+    "128": "assets/finshots.png"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [{
+    "js": ["contentscript.js"],
+    "css": ["contentscript.css"],
+    "matches": ["<all_urls>"]
+  }],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "web_accessible_resources": ["assets/*"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
